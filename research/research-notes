@@ -50,4 +50,149 @@ notation.
 			Cerebral Cortex. This thing is good for movement init, 
 			awareness, analysis and expression of emotions.
 
-	Cerebellum -	Coordinates voluntary movements of muscles and 
+	Cerebellum -	Coordinates voluntary movements of muscles and and balance
+			maintainance.
+
+	Brain Stem - 	Controls respiration, heart regulation, biorythms, neuro-
+			hormone and hormone secretion.
+
+	The highest electrical activity comes from the cerebral cortex due to its 
+	proximity to the skull surface.
+
+
+EEG
+===
+
+-	Electriacl currents in the brain discovered in 1875 by a one Richard Caton.
+-	Rabbits and Monkeys were harmed in the making of his discoveries.
+-	1924 saw the successfull amplification of the brain's electrical activity using
+	radio equipment.
+-	In 1934 Adiran and Matthews published the paper verifying the concept of brain
+	waves and identified regular oscillation around 10 to 12 Hz which are now known
+	as 'alpha rythms'
+
+Brain Waves Classification
+==========================
+
+-	Subjects are instructed to close their eyes and relax
+-	Brain patterns are sinusoidal
+-	range from 0.5 to 100 uV in amplitude (100 times lower than EEG signals)
+-	Can use fourier transforms to find the power spectrum from raw signal
+-	Although continuous, from 0 to half of the freq, the brain state
+	of the individial may cause overpowering of certain freqs
+
+-	The Brain waves are divided as follows:
+	
+	beta >13Hz
+	alpha 8-13Hz
+	theta 4-8Hz
+	delta 0.5-4Hz
+
+-	Alpha is the most studied:
+	-	observed in the occipital region
+	-	50 uV amp (peak-to-peak)
+	-	Induced by relaxation and closing the eyes (causes beta to alpha transfer)
+	-	Precise origin is not known
+
+-	When active, Beta is supreme
+-	When calm/drowsy Alpha is alpha
+-	Sleep induces lower frequencies
+
+Sleep 
+=====
+
+-	NREM and REM (non-rapid/rapid eye movement)
+-	REM occurs in cycles
+-	NREM is divided in I, II, III and IV stages (last two attributed to deep sleep)
+
+-	It is possible to distinguish individual behaviour/personality via EGG scans
+	subjects regarded as 'rational' or 'intuitive' will display hicher activity in their
+	frontal lobe
+
+Clinical Applications
+=====================
+
+-	Monitor alertness/coma/brain death
+-	Locate areas of damage due to head injury
+-	Test pathways 
+-	Monitor congitive engagement
+-	Produce biofeedback situations
+-	Control anaesthesia
+-	Investigate epilepsy and locate seizure origin
+-	Test epilepsy drug effects
+.... List goes on
+
+
+-	Symmetry of alpha activity within hemispheres is a good way of monitoring
+	or detecting lesions
+
+EEG Signal Distortion
+=====================
+
+-	Reduction in amplitude
+-	Decrease of dominant freqs beyond normal limit
+-	Spikes
+-	In epileptics, these spikes can be extremely high (1000 uV)
+
+Quatitative electroencephalography
+==================================
+- 	QEEG maps EEG information from the entire head region
+- 	This allows one to determine spatial abnormalities
+
+EEG Recording techniques
+========================
+- Employs a systemd consisting of:
+	- Electrodes with conductive media
+	- amplifiers with filters
+	- A/D converter
+	- recording device
+
+- Electrodes read the signals from the head surface
+- Amplifiers bring the microvolt signals into the range where they can be digitized
+- converter converts analog signal to digital
+- PC stores and displays data
+
+- The electrode system can support 10-20 electrode placements
+- Recordings at each electrode can be associated with the region of the brain it is located at
+- There are also reference electrodes that help with the averaging of information
+- reference electrode can be located in a variety of places such as the vertex (Cz) or the ears
+
+- Amplifier information is indepth. Wont look at it for now as I'm not sure how much we need to know that
+
+- Filtering looks important, predominantly use FIR or IIR as to not distort wave phases
+
+Common causes of artifacting
+============================
+
+- Patient related:
+	- Body movement
+	- EMG
+	- ECG (pulse/pacemaker)
+	- eye movements
+	- sweating
+
+- Technical:
+	- 50/60Hz 
+	- impedence fluctuation
+	- cable movement
+	- broken wire contacts
+	- too much eletrode jelly or lack thereof (or even inconsistancy)
+	- low battery
+
+Extra
+=====
+
+Analog filters recommended:
+	- high pass filter with a cut off frequency between 0.1 and 0.7Hz
+	- low pass filter with cut-off of less than half of the sampling rate
+	- frequencise above 50/hz are rarely involved as the contribute negligibly
+
+Converter:
+	- at least 12 bit
+	- accuracy lower than overall noise (0.3-2uV) 
+	- sampling freq between 128-1024Hz
+
+Digital filters: 
+	- Digital high pass FIR filter with similar cutoff as analog high pass.
+
+
