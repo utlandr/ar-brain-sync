@@ -196,3 +196,130 @@ Digital filters:
 	- Digital high pass FIR filter with similar cutoff as analog high pass.
 
 
+Wolpaw, J. R., N. Birbaumer, D. J. McFarland, G. Pfurtscheller and T. M. Vaughan (2002). "Brain-Computer Interfaces for Communication and Control." Cl
+======================================================================================================================================================
+
+	Abstract
+	========
+        For many years people have speculated that electroencephalographic activity or other electrophysiological measures of brain function might provide a new non-muscular channel for sending messages and commands to the external world – a brain–computer interface (BCI). Over the past 15 years, productive BCI research programs have arisen. Encouraged by new understanding of brain function, by the advent of powerful low-cost computer equipment, and by growing recognition of the needs and potentials of people with disabilities, these programs concentrate on developing new augmentative communication and control technology for those with severe neuromuscular disorders, such as amyotrophic lateral sclerosis, brainstem stroke, and spinal cord injury. The immediate goal is to provide these users, who may be completely paralyzed, or ‘locked in’, with basic communication capabilities so that they can express their wishes to caregivers or even operate word processing programs or neuroprostheses. Present-day BCIs determine the intent of the user from a variety of different electrophysiological signals. These signals include slow cortical potentials, P300 potentials, and mu or beta rhythms recorded from the scalp, and cortical neuronal activity recorded by implanted electrodes. They are translated in real-time into commands that operate a computer display or other device. Successful operation requires that the user encode commands in these signals and that the BCI derive the commands from the signals. Thus, the user and the BCI system need to adapt to each other both initially and continually so as to ensure stable performance. Current BCIs have maximum information transfer rates up to 10–25 bits/min. This limited capacity can be valuable for people whose severe disabilities prevent them from using conventional augmentative communication methods. At the same time, many possible applications of BCI technology, such as neuroprosthesis control, may require higher information transfer rates. Future progress will depend on: recognition that BCI research and development is an interdisciplinary problem, involving neurobiology, psychology, engineering, mathematics, and computer science; identification of those signals, whether evoked potentials, spontaneous rhythms, or neuronal firing rates, that users are best able to control independent of activity in conventional motor output pathways; development of training methods for helping users to gain and maintain that control; delineation of the best algorithms for translating these signals into device commands; attention to the identification and elimination of artifacts such as electromyographic and electro-oculographic activity; adoption of precise and objective procedures for evaluating BCI performance; recognition of the need for long-term as well as short-term assessment of BCI performance; identification of appropriate BCI applications and appropriate matching of applications and users; and attention to factors that affect user acceptance of augmentative technology, including ease of use, cosmesis, and provision of those communication and control capacities that are most important to the user. Development of BCI technology will also benefit from greater emphasis on peer-reviewed research publications and avoidance of the hyperbolic and often misleading media attention that tends to generate unrealistic expectations in the public and skepticism in other researchers. With adequate recognition and effective engagement of all these issues, BCI systems could eventually provide an important new communication and control option for those with motor disabilities and might also give those without disabilities a supplementary control channel or a control channel useful in special circumstances.
+
+	Keywords
+	========
+	Brain–computer interface
+	Electroencephalography
+	Augmentative communication
+	Rehabilitation
+	Neuroprosthesis
+	Brain–machine interface	
+
+
+- This papers looks into the viability of using brain-computer interfaces for those that have impaired 
+  communication/control. There are 3 options for restorting function:
+	- Increase the capabilities of the remaingin pathways. The idea here is that the body in some
+	  aspects is capable of covering loss / inhibition else. This is seen in muscles. Hence, a 
+	  body part replaces a lost function.
+
+	- The second option is to restore function by detouring around the breaks in the neural pathway
+	  that controls muscles. EMG (electromygraphic) activity from muscles above the level of a lesion
+	  can control electrical stimulation restore movement.
+
+	- The final option (the kicker) is to provide the brain with a new, non-muscular communication 
+	  that is direct using a Brain Computer Interface (BCI). EEG is capable of covering this method.
+	  EEG is also the only practical method.
+
+The present review
+==================
+
+- There exists dependent and independent BCIs:
+	- Dependent BCIs do not use the brain's normal output pathways to carry the message. Rather, 
+	  the activity in these pathways is required to generate the brain activity that does carry it. 
+	  Thus BCI's are somewhat reactionary. For example, one dependent BCI presents a user with a
+	  matrix of leters that flash one at a time. The user selects a specific letter by looking
+	  directly at it. This results in an evoked potential that is higher than other letters.
+	  Note here that EEG is used to detect this, but it requires the gaze of the user to actally 
+	  work. 
+
+	- Independent BCIs are in direct contrast. Take the same example (flashing letters) except, 
+	  we observe that when a user selects a letter, there is a jump in brain activity for a 
+	  specific region/electrode. Once again, EEG is used to detect this, but the message carried
+	  did not depend gaze, but rather the users intent. 
+
+- Interesting note here. BCI is a skill, like anything else, one will struggle to use it initially, 
+  but as they use it more, they become more proficient. This can cause slight alterations to brain
+  activity that requires BCI's to be adaptive and specific to a user's progression.
+
+The BCI system
+==============
+
+1. Signal acquisition - Signal is retrieved and digitized using EEG 
+
+2. Signal processing - Feature extraction and translation algorithm <- oh boy I have seen this before
+		       in speaker authentication.
+
+3. Generate Device commands and execute.
+
+- Note here that the feature extraction is extremely broad and the data can be in almost any form
+  
+- Translation algorithm is also varied in approach. Can be as simple as linear statistical 
+  regression or become as convoluted as neural networks. It is important that I take a simple
+  approach first before getting too complex and convoluted. 
+
+- The algorithm has to capable of filtering out the noise that is EEG signal variation due to
+  a variety of factors not related to the task. Factors include:
+	- Time of day
+	- Hormonal levels
+	- immediate environment
+	- recent events 
+	- fatigue
+
+- The first immediate adaptation is to the users brain signals. For example, 
+  if the signal is specific to a range,the BCI should be able to use that information
+
+- Often a BCI uses periodic online adjustments to data based on short term / immediate 
+  conditions that can be recorded. This is the second level of adaptation
+
+- The final level of adaptation is recording effective operation. After a signal is 
+  recieved and operation takes place, the resulting successfull / unsucessful operation
+  will result in sebsequent activity. This information can also be used for adjustment,
+  or providing a user with a reward.
+
+Present Day BCI's
+=================
+
+There are 5 groups of BCI's:
+	- VEP BCI - use the visual evoked potential that is produced by brief visual
+	  stimuli recorded over the visual cortex. This is an example of a dependent
+	  BCI that often requires/depends on the users gaze. This method is capable 
+	  of enabling users to communicate at 10-12 words a minute. 
+
+	- SCP BCI - Slow cortical potential BCI's leverage slow voltage changes.
+		    This system is often used to re-enforce decisions over time in by 
+		    observing subsequent voltage increase / decrease. 
+
+
+	- Interesting information, the P300 response is a typical/naive response to a desired 
+  	  choice. This is inherent in all humans. However as a user progresses, the P300 
+  	  response can drastically improve or deteriorate. P300 BCIs have been made for this
+
+Mu and beta rhythms and other activity from sensorimoter cortex
+==============================================================
+
+	- Between 8-12 Hz (remember) activity is present someone is doing nothing. 
+	  BCI's have been made for this as the rhythms often intesect with movement.
+
+	- The Wadsworth BCI - Individuals can control mu and beta rhythms to create
+	  2d dimensional control. Linear equations are used to determine the 
+	  prominence of both beta and mu rythms around the brain 10 times/s.
+	
+		- Sidenote here, the r^2 parameter can be used to determine how much 
+		  control a user has of the cursor. 
+
+	- The Graz BCI - For each imagined action, an n-dimensional feature vector is
+	  		 derived. Here one can use linear discriminant analysis or other
+			 to determine the action a user is trying to do. 
+
+
+ 
+
+
+
