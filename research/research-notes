@@ -320,6 +320,216 @@ Mu and beta rhythms and other activity from sensorimoter cortex
 
 
  
+Navarro, K. F. (2004). Wearable, Wireless Brain Computer Interfaces In Augmented Reality. International Conference on Information Technology: Coding and Computing. ITCC 2004, IEEE.
+====================================================================================================================================================================================
+
+	Abstract 
+	========
+	
+	After Pierre Gloor and Hans Berger discovered the
+	human electroencephalogram or EEG produced in the
+	brain in 1969, Brain Computer Interfaces (BCIs) became
+	a reality. However, for more than a couple of decades,
+	besides the common social fascination with such devices,
+	they have not yet been considered as a feasible alternative
+	interface for common daily activities. This is attributed to
+	issues such as response time, costs and long initial user
+	training periods. This paper defines and outlines the
+	current BCI technologies and reviews the current status
+	of BCIs in the context of wearable computers. The use of
+	Augmented Reality environments and the integration of
+	wireless technologies such as Bluetooth are proposed as
+	potential catalysts in the process of incorporating BCIs
+	into daily life.
+
+- Here they investigate the feasibility of a wireless BCI 
+
+
+
+Bluetooth Feasibility
+=====================
+
+- Bluetooth offers a fast, low power and interference resistant method of wireless communication
+- It is also compatible with alot of devices
+
+
+Potential EEG trigger methods
+=============================
+
+- P300 responses are generally more reliable as a BCI method. In order for P300 responses
+  to happen, a significant event has to occur that stands out from other options (which
+  correlates well with a user's desired option/object)
+
+- The downside is that a P300 response can also be evoked when a user has an unrelated 
+  memory of an object/option that they do not want to select.
+
+- Steady Visual Evoked Potentials also offer an attract solution. By using icons with a 
+  unique strobing/falshing effect, EEG over the visual cortex will respond at a similar
+  rate. 
+
+
+Design
+======
+
+- Current EEG headsets are unweildy (that said, I have seen embedded electrodes in a VR
+  headset that looked very effective). Design difficulties may rather pertain to the 
+  VR headset itself rather than the EEG electrodes.
+
+- Interesting point: The use of VR/AR can potentially maintain a 'lab-like' environemnt
+  which may improve signal detection in an otherwise noisy realistic environment. 
+
+- It has been shown that performing an activity with a BCI in a real environment is 
+  drastically worse compared to an AR/VR scape.
+
+
+My thoughts
+===========
+
+Very brief an intersting paper. The idea that AR/VR reduces background noise when
+operating a BCI is very attractive. It would be interesting to see how brain 
+syncronisation ties into this theory. However, the issue of BCI design to me is something
+that is reliant on VR/AR harware (which is still bulky and unwieldy compared to the ideal
+design of seamless glasses. 
+
+
+Montague, P. R., G. S.Berns, J. D.Cohen, S. M.McClure, GiuseppePagnoni, MukeshDhamala, M. C.Wiest, IgorKarpov, R. D.King, NathanApple and R. E.Fisher (2002). "Hyperscanning: Simultaneous fMRI during Linked Social Interactions." NeuroImage 16(4): 1159-1164. 
+================================================================================================================================================================================================================================================================
+
+	Abstract
+	========
+	“Plain question and plain answer make the shortest road
+	out of most perplexities.”
+	Mark Twain-Life on the Mississippi
+	A new methodology for the measurement of the neu-
+	ral substrates of human social interaction is de-
+	scribed. This technology, termed “Hyperscan,” embod-
+	ies both the hardware and the software necessary to
+	link magnetic resonance scanners through the inter-
+	net. Hyperscanning allows for the performance of hu-
+	man behavioral experiments in which participants
+	can interact with each other while functional MRI is
+	acquired in synchrony with the behavioral interac-
+	tions. Data are presented from a simple game of decep-
+	tion between pairs of subjects. Because people may
+	interact both asymmetrically and asynchronously,
+	both the design and the analysis must accommodate
+	this added complexity. Several potential approaches
+	are described. © 2002 Elsevier Science (USA)
+
+What is the point in Hyperscanning?
+===================================
+
+Hyperscanning provides a method of simultaneous monitoring of two EEG headsets. This 
+enables one to obseve relationships/features between EEG signals and tie them to a 
+physical stimulus.
+
+One of the potential issues with Hyperscanning is the difference in environment. Since 
+the experiment was conducted online, simulatneuous EEG data was recorded for 
+individuals in different surrounding environments. This could impact certain responses
+
+Methods of correlation include:
+	- PCA (Principal Components Analysis)
+	- IDA (Independent Components Analysis)
+	- PLS (Partial Least Squares)
+
+But these methods will not identify temporally dynamic processes. LDA can kinda do this
+but it is restricted to activity modes that are temporally correlated.
+
+Weighing different brain and signals is also tricky. Method used here is to get an 
+estimate a signal to noise ration for each brain and weigh accordingly.
+
+Online latency can also be an issue. This paper experienced latencies between 300-400 ms
+which is relatively low (especially for the task they were given). However, I estimate 
+that one could get away with comparing signals as they appear to occur. 
+
+
+ Babiloni, F., F. Cincotti, D. Mattia, M. Mattiocco, F. D. V. Fallani, A. Tocci, L. Bianchi, M. G. Marciani and L. Astolfi (2006). Hypermethods for EEG Hyperscanning. Engineering in Medicine and Biology Society, 2006. EMBS'06. 28th Annual International Conference of the IEEE, IEEE.
+==========================================================================================================================================================================================================================================================================================
+
+	Abstract
+
+	Until now, in EEG studies the activity of the brain
+	during simple or complex tasks have been recorded in a single
+	subject. Often, during such EEG recordings, subjects interacts
+	with the external devices or the researchers in order to
+	reproduce conditions similar to the those usually occurring in
+	the real-life. However, in order to study the concurrent activity
+	in subjects interacting in cooperation or competition activities,
+	the issue of the simultaneous recording of their brain activity
+	became mandatory. The simultaneous recording of
+	hemodynamic or neuroelectric activity of the brain is called
+	“hyperscanning”. We would like present results obtained by
+	EEG hyperscannings performed on a group of subjects
+	engaged in cooperative games. The EEG hyperscannings have
+	been performed with the simultaneous use of high resolution
+	EEG devices on groups of three and four subjects while they
+	were playing cooperative games. The analysis of such data have
+	been conducted with analysis method that taken into account
+	the particular nature of the data simultaneously gathered from
+	different subjects.. We called these methods hypermethods. In
+	particular, we estimate the concurrent activity in multiple
+	brains of the group and we depicted the causal connections
+	between regions of different brains (hyperconnectivity). The
+	resulting causality patterns will link certain areas of the brain
+	of a subject to the waveforms obtained from the other brain
+	areas of another subject of the same group. Results obtained
+	in a study of several groups recorded by the hyperscanning
+	reveals causal links between prefrontal areas of the different
+	subjects when they are performing cooperative games in
+	different frequency bands. Hypermethods for hyperscanning
+	will open a different area for the study of neuroscience, in
+	which the activity of multiple brains during social cooperation
+	could be investigated. In such area the importance of EEG will
+	be relevant due to its temporal and spatial resolution now
+	obtainable with the high resolution EEG techniques.
+
+- Hyperscanning has the potential to quatifiably measure cooperation.
+
+- Hyperscanning has use in game theory to analyze 'tit for tat' scenarios like the 
+  prisoners dilemma. Furthermore, there is the oppotunity to investigate social
+  interactions and concepts such as exclusion and prejudice.
+
+- in this study, a group of people play an Italian card game called 'tressette'. The goal
+  is that the 4 players (2 teams of 2) must play cards in a circle until the best card 
+  wins. More importantly, the cooperation between 2 players stimulates activity in 
+  cortical regions. 
+
+- A Multivariate Autoregressive Model (MVAR) is used to identify coherent activity in 
+  Regions of Interest (ROI's). The advantage of MVAR being that it is independent of 
+  ROI and can be applied to any part of the brain.
+
+- Here, the study uses outdegree to measure the hyperconnectivity of one ROI to all 
+  and indegree to determine the amount of connectivity from all areas to one ROI.
+
+- In conclusion, hyperscanning was found to be effective in identifying activity 
+  asscoiated with a leader-group dynamic (in this game the first player of the game
+  placing a card on the board).
+
+Yun, K., K. Watanabe and S. Shimojo (2012). "Interpersonal Body and Neural Synchronization as a Marker of Implicit Social Interaction." Scientific Rep
+======================================================================================================================================================
+
+	Abstract
+	========
+	
+	One may have experienced his or her footsteps unconsciously synchronize with the footsteps of a friend
+	while walking together, or heard an audience’s clapping hands naturally synchronize into a steady rhythm.
+	However, the mechanisms of body movement synchrony and the role of this phenomenon in implicit
+	interpersonal interactions remain unclear. We aimed to evaluate unconscious body movement synchrony
+	changes as an index of implicit interpersonal interaction between the participants, and also to assess the
+	underlying neural correlates and functional connectivity among and within the brain regions. We found that
+	synchrony of both fingertip movement and neural activity between the two participants increased after
+	cooperative interaction. These results suggest that the increase of interpersonal body movement synchrony
+	via interpersonal interaction can be a measurable basis of implicit social interaction. The paradigm provides
+	a tool for identifying the behavioral and the neural correlates of implicit social interaction.
+
+
+This paper describes the finger pointing syncronous experment. It found that post check
+syncronisation was thoroughly better and more concise (smaller error margin) than pre-
+check and cross check routine (where users are mixed up without prior training). 
+
+Regions of interest were right inferior parietal and posterioi temporal cortex which have
+been observed to be important in social cognition aspects like empathy. They are also
+active in low-level computational processes associated with the sense of agency.
 
 
 
