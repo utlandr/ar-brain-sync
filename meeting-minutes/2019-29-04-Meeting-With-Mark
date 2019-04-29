@@ -13,3 +13,23 @@ Notes before the meeting
 	- Recommend experiements that are good for AR/VR (effect of background noise, etc)
 	- Discuss possible limitations of AR/VR, particularly the technology available to US.
 
+Meeting
+=======
+- Data analysis is there but more data is needed. 
+- Fine tuning required of the code. Only uses one form of analysis. Need to add other forms of analysis. 
+- ATM its simple. 
+- Bergers. Hyperscanning cautionary tale. Important to focus on the methods of analysis. Might not have time to implement them all. 
+- Finger pointing is one of the more popular testing methods. 
+- Switching perspective is important (testing different exmaple)
+- But there aren't many established methods. (we could investigate our own methods)
+- Need to do some time estimation (finger tracking might be worth sticking to).
+- Good method is to read it, memorise, write summary, compare. 
+- Send Amit a copy before submission (The draft). 
+- Applications
+	- Training applications (Monitoring Device)
+	- Can also work as a BCI (check if someone is paying attention)
+
+- Research what happens when a task becmoes too complex. 
+- Hardware/Software requirements. 
+- Amit works on Brain Syncronisation and getting new hardware for streamlining the process. 
+
