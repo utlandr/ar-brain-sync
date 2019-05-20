@@ -1,0 +1,51 @@
+Code and Hardware Familiarity
+=============================
+
+We met with Amit and Pawan to gain an understanding of the the hardware and 
+software required to analyze eeg data. The two most important so far are:
+ - OpenVIBE: An SDK for OpenBCI hardware that powers the eeg headsets. 
+ 	     This software is responsible for data recording and live tracking
+	     of eeg signals.
+
+ - EEGlab: A MATLAB toolkit designed to streamline several EEG dataset
+           methods. This is what Amit and Nakul used to import and setup the 
+	   EEG data and run dual head plots.
+
+
+ 
+We also learned how to use the EEG headset to import data. Here are some of
+the important settings (after inserting the USB dongle and opening OpenVIBE 
+data acquisition server): 
+ - Driver: OpenBCI 
+ 
+ - Driver Properties: 
+ 	- Device: \\.\COM6
+	- Use Daisy Module: Ticked
+ 
+ - Preferences: 
+ 	- Drift Correction: Let the driver decide
+	- Drift Tolerance: 10s 
+
+ - Connection Port: 1024
+ 
+ - Sample count per sent block: 64
+
+
+Also we set up the data saver and viewer diagram on OpenViBE Designer:
+ - Drag an acquisition client into the setup.
+ - Drag a Signal Display object to the setup.
+ - Connect In/Out pins. (Purple/Pink triagles). 
+
+
+Amit also provided us with a couple of datasets to run the syncronisation.
+He also referenced the paper that they followed:
+  - Title: Brain-to-brain entrainment: EEG interbrain synchronization while speaking and listening.
+  - By: Alejandro Perez, Manuel Carreiras
+
+This paper is also responsible for the double head visualisation.
+
+Amit recommends we follow a 45 OpenVIBE tutorial.
+
+We will need to contact Pawan again to discuss some of the missing files. When 
+running their main script, `double_headplot` required a p3.spl (spline file). 
+We will also need to do more research as to file types and conventions in EEG.
