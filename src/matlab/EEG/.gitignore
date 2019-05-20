@@ -1,0 +1,10 @@
+# Ignoreing EEGlab module
+Contents.m
+eeglablicencse.txt
+eeglab.m
+eeglab.prj
+functions
+plugins
+README.md
+sample_data
+sample_locs
