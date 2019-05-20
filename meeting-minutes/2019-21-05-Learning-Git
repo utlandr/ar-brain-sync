@@ -1,0 +1,10 @@
+Learning Git
+============
+
+We learned how to setup a remote repository for our code.
+We now both have a copy of the project and a method of easily making
+appropriate changes to the project. 
+
+We also noticed that tracking eeglab makes the project a bit bloated so we
+will make some changes to how we setup dependencies for the project. 
+
