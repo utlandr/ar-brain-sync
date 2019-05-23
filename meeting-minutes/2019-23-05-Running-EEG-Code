@@ -1,0 +1,36 @@
+Running EEG Code
+================
+
+We fixed the issue with the missing file ('p3.spl' which is a file specifying
+electrode locations around the scalp for visualisations).
+
+We ran Pawan and Nakul's project code, which is in of itself has a direct 
+approach: 
+ - The electrode readings at each second are averaged and compared to every
+   other electrode both on the subject. 
+ - For two electrode comparisons, if they are from different people and have a
+   difference in signal below a threshold (0.01), the comparison is accepted
+   as a potential brain synchronisation.
+ - They also include a script (dualheadplot.m) that was created by researchers
+   in Canada and Spain that produces a double head plot with connections.
+
+Initial Analysis of the Method
+==============================
+While the aforementioned method of syncronisation detection is straight
+forward, there are a couple of problems that it doesn't address.
+Primarily, we noticed that no normalisation of the EEG data was performed.
+Since this method relies on minimal absolute difference between two signals,
+this could potentially mean that alot of possible syncornisations are left
+out. Several factors can attribute to a systematic bias in either EEG dataset.
+ 
+Averaging of the data across time intervals is a method of removing background
+noise. However, this is a somewhat blind method of noise removal that also 
+effectly reduces the amount of data we have to investigate synchronisation. It 
+is also likely that averaging of the data over a second removes any possible
+synchronisations within that second or creates false positives.
+
+This code is important in realizing the necessity of a model that is robust in
+high noise data, but is also capable of more complex ways to detect 
+synchronisation. A method that comes to mind in these regards is Principal
+Component Analysis (PCA).
+
