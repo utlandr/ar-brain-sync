@@ -1,0 +1,20 @@
+EEG Data Analysis
+=================
+
+Observing some of the issues with the dataset for direct comparison,
+we performed some base data analysis on the EEG data to observe some
+patterns and possibly setup some type of normalization to improve
+comparisons between the headsets (before applying a model). 
+
+Plotting the distribution of readings across the entire experiment 
+for both datasets we noticed that the distributions for p3.gdf and p4.
+gdf are completey different, p3.gdf exhibits majority of readings 
+between 14.9 to 15.1 (with some weird recordings of low/near-zero in 
+some cases). p4.gdf on the other hand is completely different, in most
+cases the data lies between 5-10. While this does indicate evidence 
+that direct comparison between both datasets is a poor way to detect
+syncronizations, we did notice a time period where data fluctuates
+more around the middle of the experiment. 
+
+So, we might need to crop some of the data/look at different time 
+periods for better insight.
