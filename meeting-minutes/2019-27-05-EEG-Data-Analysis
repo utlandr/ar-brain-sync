@@ -18,3 +18,16 @@ more around the middle of the experiment.
 
 So, we might need to crop some of the data/look at different time 
 periods for better insight.
+
+Couple of things to ask Pawan/Nakul or Amit:
+
+ - What the units of measurement for recordings are (we presume 
+   Hz at the moment) 
+
+ - A log of activity / tasks being performed when the EEG data was
+   recorded (might explain some of the weirdness in the data)
+ 
+ - Some more information on data collection method. We know the 
+   averageing method they used, but we need info on low-high pass 
+   filters (or if there are any). 
+
