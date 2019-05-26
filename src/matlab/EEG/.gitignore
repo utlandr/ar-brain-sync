@@ -8,3 +8,6 @@ plugins
 README.md
 sample_data
 sample_locs
+
+# Ignore tmp matlab files
+**.m~
