@@ -1,0 +1,17 @@
+More Data Analysis
+==================
+
+Yesterday, we focused on observing the distribution of EEG data for
+both headsets. Today, we looked at comparing the data over time.
+What we found was more interesting and explains the weird 
+difference we saw yesterday. 
+
+Plotting EEG readings over time for each electrode revealed that from
+epoch 0-400 and 600-1000, the readings from p3.gdf do not change 
+whatsoever (stays around ~15). Between 400-600, activity between both
+EEG headsets really begins. We were able to identify regions in which
+activity from both headsets spikes at the same time, which may be 
+evidence of syncornisation. Methods like PLS (phase locking 
+synchronization) might be crucial in identifying syncronisation over
+a longer period of time (direct comparison is over a second).
+ 
