@@ -1,0 +1,13 @@
+On the topic of PCA for EEG
+===========================
+
+Today we looked at principal component analysis for eeg data.
+PCA (and Idepenpendt Component Analysis, ICA) on paper display
+potential in either separating important eeg data from the
+noise, or seperating regualar eeg activity from an 
+activation. Gus has been looking at phase locking methods as
+well as learning more about using eeglab.
+
+We are going to attempt creating our own data (a baseline
+EEG recording) to be used for testing. 
+
