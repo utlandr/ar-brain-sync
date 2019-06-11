@@ -1,4 +1,5 @@
-eeglab
+% Must rin `eeglab` before running this script
+
 lis=[];
 count=1;
 EEG1=pop_biosig('p3.gdf');
