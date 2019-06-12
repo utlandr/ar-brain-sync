@@ -1,0 +1,11 @@
+Phase locking value analysis
+============================
+
+We have been looking into better methods of detecting syncronisation.
+Phase locking value attempts to match signals that display similar phase
+at specifica points in time. This should in theory assist with data that
+comes from different eeg headsets as PLVs doesnt rely on the sensitivity of
+EEG readings, rather the phase of the waves. We found an implementation of
+PLV using matlab and are going to adapt that to our own datasets. We also 
+obtained raw EEG data (non-averaged) to work on.
+
