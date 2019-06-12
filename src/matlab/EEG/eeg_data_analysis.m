@@ -31,8 +31,8 @@ for i = 1:length(chan)
     hist2 = histogram( series2, 'EdgeColor', 'green', 'FaceColor',  'green', 'FaceAlpha', 0.2 , 'BinWidth', width);
     hold off;
     
-    xlabel("EEG Average Reading")
-    ylabel("Frequency")
+    xlabel('EEG Average Reading')
+    ylabel('Frequency')
     
     title(chan{i})
 end
@@ -48,14 +48,14 @@ end
 
 figure(2)
 histogram(EEG1.data(12, :), 'BinWidth', 0.001)
-xlabel("Average EEG Reading")
-ylabel("Frequency")
-title("EEG1 data distribution at electrode F4")
+xlabel('Average EEG Reading')
+ylabel('Frequency')
+title('EEG1 data distribution at electrode F4')
 figure(3)
 histogram(EEG2.data(12, :), 'BinWidth', 0.1)
-xlabel("Average EEG Reading")
-ylabel("Frequency")
-title("EEG2 data distribution at electrode F4")
+xlabel('Average EEG Reading')
+ylabel('Frequency')
+title('EEG2 data distribution at electrode F4')
 
 % Plot data at an electrode for over time
 figure('Position', [5, 5, 1200, 650])
@@ -68,8 +68,8 @@ for i = 1:length(chan)
     line2 = plot(1:EEG2.pnts ,series2);
     hold off;
     
-    xlabel("Epoch")
-    ylabel("EGG average reading")
+    xlabel('Epoch')
+    ylabel('EGG average reading')
     
     title(chan{i})
 end
