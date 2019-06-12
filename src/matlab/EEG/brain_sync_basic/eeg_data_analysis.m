@@ -9,8 +9,8 @@ close all
 clc
 
 % Import data
-EEG1=pop_biosig('p3.gdf');
-EEG2=pop_biosig('p4.gdf');
+EEG1=pop_biosig('eeg_data/p3.gdf');
+EEG2=pop_biosig('eeg_data/p4.gdf');
 
 % Channel names
 chan={ 'FP1', 'FP2', 'C3', 'C4', ...
