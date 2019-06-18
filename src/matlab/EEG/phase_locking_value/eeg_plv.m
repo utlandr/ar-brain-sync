@@ -13,5 +13,5 @@ eeg = pop_biosig('../eeg_data/Test-[2019.05.20-11.26.30].gdf');
 
 % specify range of interest
 filtSpec.order = 7;
-filtSpec.range = [35 45]; %Hz (Gamma range)
-lets_go =  pn_eegPLV(eeg, 64, filtSpec);
+filtSpec.range = [10 30]; %Hz
+plv_ouput =  pn_eegPLV(eeg.data, 64, filtSpec);

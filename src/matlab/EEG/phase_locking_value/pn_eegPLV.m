@@ -58,7 +58,7 @@ function [plv] = pn_eegPLV(eegData, srate, filtSpec, dataSelectArr)
 % 
 % Reference:
 %   Lachaux, J P, E Rodriguez, J Martinerie, and F J Varela. 
-%   “Measuring phase synchrony in brain signals.” 
+%   ï¿½Measuring phase synchrony in brain signals.ï¿½ 
 %   Human brain mapping 8, no. 4 (January 1999): 194-208. 
 %   http://www.ncbi.nlm.nih.gov/pubmed/10619414.
 % 
