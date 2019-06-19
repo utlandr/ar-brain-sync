@@ -1,0 +1,8 @@
+Lab Data
+========
+
+We have recieved new data conducting the finger-pointing experiment (real-life).
+We spent a bit of time finding ways to import csv to prepare for EEGlab. I was 
+able to automate the csv import process to matlab, and Gus has determined how 
+to import the raw EEG data into EEGLab. Our next steps pertain to combining 
+these stages so that we can begin performing data analysis on this experimen
