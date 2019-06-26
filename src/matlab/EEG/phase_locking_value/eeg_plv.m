@@ -9,7 +9,8 @@ clc
 
 
 % First, import the data
-eeg = pop_biosig('../eeg_data/Test-[2019.05.20-11.26.30].gdf');
+eeg1 = pop_biosig('../eeg_data/p3.gdf');
+egg2 = pop_biosig('../eeg_data/reference/p4.gdf');
 
 % specify range of interest
 filtSpec.order = 7;
