@@ -1,0 +1,15 @@
+More Lab Data and PLV thoughts
+==============================
+
+We have recieved more data for the finger pointing experiment. I have 
+implemented a function in MATLAB that will perform the correct importing of
+data that comes from this experiment. Furthermore, I tested an example of PLV.
+An issue that I am facing is that I underestimated how much data PLV requires
+in the way of samples (which this experiment probably doesn't have enough of,
+and even if it did, it is hard to replicated the finger experiment identically
+for each pair several times over). What I have come across is a the S-PLV 
+method which attempts to perform PLV on single sample (that is single 
+experiment) at the cost of temporal resolution (taking the PLV across time
+points. I will endeveour to alter the current implentation to perform this
+analysis single sample calculation.
+ 
