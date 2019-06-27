@@ -1,0 +1,12 @@
+SPLV Implementation
+===================
+
+I have implemented the Single sample Phase Locking Value algorithm. Currently,
+the implementation is untested except for basic checks such as PLV's between
+[0 1] and testing on randomly generated datasetss (which are not very good for
+determining if the algorith works. My implementation is a modification of 
+Prineeth Namburi's implementation (available via the MATLAB Central File 
+Exchange) of PLV. The next stage is to test whether the SPLV can be used to at
+least gain qualitative insight into brain syncronisation using the lab data 
+providedf by the ABI.
+
