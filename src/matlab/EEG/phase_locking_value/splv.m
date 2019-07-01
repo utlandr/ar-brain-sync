@@ -1,4 +1,4 @@
-function [plv] = splv(eeg_data, srate, freq_band, order, delta_half)
+function [plv, t_points] = splv(eeg_data, srate, freq_band, order, delta_half, overlap)
     % DOCSTRING
     % This is an implementation of the Phase Locking Value (PLV) algorithm that
     % only considers a single sample/trial to compute PLVs. It varies from the 
@@ -11,11 +11,13 @@ function [plv] = splv(eeg_data, srate, freq_band, order, delta_half)
     % srate         -   (int) The sampling rate of the EGG data in Hz
     % freq_band     -   (2x1 double) The range of frequencies to calculate PLV
     %                   for (e.g. use [8 12] for alpha waves.
-    % order         -   The order of the FIR filter (should be designed to
-    %                   approsimately 4-5 cycles of the desired frequency. e.g
+    % order         -   (int) The order of the FIR filter (should be designed to
+    %                   approximately 4-5 cycles of the desired frequency. e.g
     %                   alpha wave has frequency of 10Hz (100ms) with a srate
     %                   of 125Hz (8ms) would use an order = 50 so that 8*50 =
     %                   400ms/100ms = 4 cycles
+    % overlap       -   (int) specifies the number of data points of overlap
+    %                   at each end of the of the time window.
     %
     % OUTPUT
     % plv           -   (nxmx2 double) A 3D matrix with dimensions nchannels x
@@ -45,11 +47,14 @@ function [plv] = splv(eeg_data, srate, freq_band, order, delta_half)
     end
     
     % Calculate time averaged PLV between all possible channel pairs
-    plv = zeros(n_channels, n_channels, n_timepoints);
+    t_points = 1:2*delta_half-overlap:n_timepoints;
+    plv = zeros(n_channels, n_channels, length(t_points));
     
     for chan_1 = 1:n_channels 
         for chan_2 = 1:n_channels
-            for t = 1:n_timepoints
+            plv_ind = 1;
+            for t = t_points               
+                % Setting the time window
                 if t - delta_half + 1 < 1
                     window = 1:t+delta_half;
                     
@@ -62,7 +67,8 @@ function [plv] = splv(eeg_data, srate, freq_band, order, delta_half)
                 end
                 
                 single_plvs = exp(1i*(fil_hilbert_eeg(chan_1, window, 1) - fil_hilbert_eeg(chan_2, window, 2)));
-                plv(chan_1, chan_2, t) = abs((1 / (2 * delta_half))*sum(single_plvs));
+                plv(chan_1, chan_2, plv_ind) = abs((1 / (2 * delta_half))*sum(single_plvs));
+                plv_ind = plv_ind+1;
             
             end
         end
