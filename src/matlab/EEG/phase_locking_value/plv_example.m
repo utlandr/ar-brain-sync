@@ -1,7 +1,7 @@
 close all
 
 % Running the example PLV given in the pn_eegPLV example
-eegData = rand(16, 125*10, 10); 
+eegData = rand(16, 125*10, 20); 
 srate = 125; %Hz
 filtSpec.order = 1;
 filtSpec.range = [35 45]; %Hz

@@ -6,7 +6,7 @@ clc
 for i = 1:10
     
     % Random data
-    eeg_rand_1 = rand(16,1250,2);
+    eeg_rand_1 = rand(16,1250,10);
 
     % options
     srate = 125;
