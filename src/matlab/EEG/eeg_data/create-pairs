@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Put me in a folder with the pair data and I will order it!
+
+even_p=$(ls -1 | grep "P[1,2]*[0,2,4,6,8]_" | cut -d "P" -f 2- | sort -k1 -t "_" -n | sed "s/^/P/")  
+odd_p=$(ls -1 | grep "P[1,2]*[1,3,5,7,9]_" | cut -d "P" -f 2- | sort -k1 -t "_" -n | sed "s/^/P/")
+
+even_comb=$(ls -1 | grep "Combined_Even")
+odd_comb=$(ls -1 | grep "Combined_Odd")
+
+even_all="$(echo $even_p) $(echo $even_comb)"
+odd_all="$(echo $odd_p) $(echo $odd_comb)"
+
+
+paste -d "," <(echo $odd_all | sed "s/ /\n/g") <(echo $even_all | sed "s/ /\n/g")
