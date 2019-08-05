@@ -18,7 +18,7 @@ run E:\eeglab14_1_2b\eeglab; %EEG home
 nchannels = 14 ; % num of channels in the EEG headset
 ChanLocs = 'E:\\eeglab14_1_2b\\plugins\\dipfit2.3\\standard_BESA\\standard-10-5-cap385.elp'; %STANDARD chan locs
 ChanLocs2 = 'E:\eeglab14_1_2b\emotivupdated.ced'; % path for custom channel locs
-ChanNum = [3:16]; % starting from 3
+ChanNum = [1:16]; % starting from 1
 % ChanNum = [1:19]; %if Deymed / 19 Channels Stuffs
 CutPath = 'C:\Users\DAI 02 - Neurolab\Desktop\Cutting Folder\CutFiles\'; % placing all the cut files in this folder
 close;
@@ -45,13 +45,13 @@ for SubjID = 1: length(SetFiles);
     EEG = pop_resample(EEG, 500); % changed to 500
 
     %STEP 3: High-pass filter and Low pass filter
-    EEG = pop_eegfiltnew(EEG,1,45,826);
+    EEG = pop_eegfiltnew(EEG,1,45,826); % What does 826 do
 
     %STEP 4: Select channels
     EEG = pop_select( EEG,'channel',ChanNum);
     
     %STEP 5: Importing channel location
-    EEG = pop_chanedit(EEG, 'lookup',ChanLocs,'load',{ChanLocs2 'filetype' 'autodetect'});
+    EEG = pop_chanedit(EEG, 'lookup',ChanLocs,'load',{ChanLocs2 'filetype' 'autodetect'}); % What does second loc file do
     
         %Keeping original EEG file
         originalEEG = EEG; % Just back up original EEG data
@@ -66,24 +66,24 @@ for SubjID = 1: length(SetFiles);
     EEG.nbchan = EEG.nbchan+1; % Important in all electrodes. Must find the average to use as reference
     EEG.data(end+1,:) = zeros(1, EEG.pnts);
     EEG.chanlocs(1,EEG.nbchan).labels = 'initialReference';
-    EEG = pop_reref(EEG, []);
-    EEG = pop_select( EEG,'nochannel',{'initialReference'});
+    EEG = pop_reref(EEG, []); % pop_reref does the averaging, where does it go?
+    EEG = pop_select( EEG,'nochannel',{'initialReference'}); % back to the start
 
     %STEP 9: Epoching data 1 to 3 sec 
-    EEG = eeg_regepochs(EEG, 'limits', [1 2] , 'extractepochs', 'on'); % creating epochs for FFT (NOT PLV)
+    EEG = eeg_regepochs(EEG, 'limits', [1 2] , 'extractepochs', 'on'); % creating epochs for FFT (NOT PLV)... What do the options do?
     
     %STEP 10: Automatic epoch rejection
     EEG = pop_autorej(EEG, 'threshold', 1000,'startprob',5,'maxrej', 5, 'nogui','on'); % Automaitcally finds the noise and removes the epochs that suck
     
     %STEP 11: Rejection epoch by probability (6SD single channel, 2SD for all channels)
     % manual rejection if data in each chan is 6StanDevs away.
-    EEG = eeg_checkset( EEG );
-    EEG = pop_jointprob(EEG,1,[1:14] ,6,2,1,0,0,[],0);
+    EEG = eeg_checkset( EEG ); % what happens after removal of epochs, what is joint prob
+    EEG = pop_jointprob(EEG,1,[1:16] ,6,2,1,0,0,[],0); % Why manual removal
     
     %STEP 12: Running ICA
     % seperates the contributions at each electrode.
     EEG = eeg_checkset( EEG );
-    EEG = pop_runica(EEG, 'extended',1,'interupt','on');
+    EEG = pop_runica(EEG, 'extended',1,'interupt','on'); % what are extended and interupt do?
     [ALLEEG EEG] = eeg_store(ALLEEG, EEG, CURRENTSET);
     
     %STEP 13 : Checking whether EEG data contains ICA decomposition
@@ -99,7 +99,7 @@ for SubjID = 1: length(SetFiles);
     
     %STEP 15: Rejecting ICA by extreme value
     %detects artifacting (and rejects the ICA)
-    EEG = pop_eegthresh(EEG,0,[1:5] ,-20,20,1,2.996,0,1);
+    EEG = pop_eegthresh(EEG,0,[1:5] ,-20,20,1,2.996,0,1); % double check start stop times
 
     %STEP 16: Finding Power for each frequency
     %%%%%%%%%%%%%%%%%%% Finding power for each frequency band %%%%%%%%%%%%%%%%%%%
@@ -108,6 +108,7 @@ for SubjID = 1: length(SetFiles);
 end
 
 %% Calculate the PLV
+% Does PLV use components, or the channel data for PLV.
 
 %% Statistic
 for ProcID = 1:length(ProcFiles)
