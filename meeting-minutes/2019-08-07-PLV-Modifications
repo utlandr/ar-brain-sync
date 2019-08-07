@@ -1,0 +1,23 @@
+PLV Modifications
+=================
+
+Went through modifications to the PLV
+pipeline: 
+ 
+ - The datasets have different number of triggers (this due 
+   to the computer the eeg data was recorded from). The 
+   So for future reference, we ignore Out 1 event label.
+ 
+ - Also learnt how to import split data by epoch
+ - Must rename duplicate event type names so that epoch
+   extraction behaves correctly.
+
+ - I think we found a solution
+
+Also learned how to perform the experiment pairs.
+ - Recording eeg data from participants
+ - 
+ - Cleaning eeg equipment
+ - Inserting gel into eeg channels
+ - 
+
