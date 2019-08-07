@@ -1,5 +1,7 @@
 %% NOTES
 
+% Here 
+
 % At this stage the files are already cut up (we need to automate that
 % prior process. Data will be in EDF format as well.
 
@@ -17,8 +19,8 @@
 run E:\eeglab14_1_2b\eeglab; %EEG home
 nchannels = 14 ; % num of channels in the EEG headset
 ChanLocs = 'E:\\eeglab14_1_2b\\plugins\\dipfit2.3\\standard_BESA\\standard-10-5-cap385.elp'; %STANDARD chan locs
-ChanLocs2 = 'E:\eeglab14_1_2b\emotivupdated.ced'; % path for custom channel locs
-ChanNum = [1:16]; % starting from 1
+ChanLocs2 = 'E:\eeglab14_1_2b\emotivupdated.ced'; % path for custom channel locs % need to get from Ihshan
+ChanNum = [1:16]; % Going through all 16 channels
 % ChanNum = [1:19]; %if Deymed / 19 Channels Stuffs
 CutPath = 'C:\Users\DAI 02 - Neurolab\Desktop\Cutting Folder\CutFiles\'; % placing all the cut files in this folder
 close;
@@ -42,10 +44,10 @@ for SubjID = 1: length(SetFiles);
     EEG.setname = dataName;
 
     %STEP 2: Changing sample rate
-    EEG = pop_resample(EEG, 500); % changed to 500
+    EEG = pop_resample(EEG, 512); % changed to 500
 
     %STEP 3: High-pass filter and Low pass filter
-    EEG = pop_eegfiltnew(EEG,1,45,826); % What does 826 do
+    EEG = pop_eegfiltnew(EEG,1,45,826); % What does 826 do <- good for now
 
     %STEP 4: Select channels
     EEG = pop_select( EEG,'channel',ChanNum);
@@ -69,7 +71,7 @@ for SubjID = 1: length(SetFiles);
     EEG = pop_reref(EEG, []); % pop_reref does the averaging, where does it go?
     EEG = pop_select( EEG,'nochannel',{'initialReference'}); % back to the start
 
-    %STEP 9: Epoching data 1 to 3 sec 
+    %STEP 9: Epoching data 1 to 3 sec <- may not need this (need to expand to 5 seconds for short experiment) 
     EEG = eeg_regepochs(EEG, 'limits', [1 2] , 'extractepochs', 'on'); % creating epochs for FFT (NOT PLV)... What do the options do?
     
     %STEP 10: Automatic epoch rejection
@@ -83,7 +85,7 @@ for SubjID = 1: length(SetFiles);
     %STEP 12: Running ICA
     % seperates the contributions at each electrode.
     EEG = eeg_checkset( EEG );
-    EEG = pop_runica(EEG, 'extended',1,'interupt','on'); % what are extended and interupt do?
+    EEG = pop_runica(EEG, 'extended',1,'interupt','on'); % what are extended and interupt do? %we will 
     [ALLEEG EEG] = eeg_store(ALLEEG, EEG, CURRENTSET);
     
     %STEP 13 : Checking whether EEG data contains ICA decomposition
@@ -120,7 +122,7 @@ for ProcID = 1:length(ProcFiles)
     
     for n = 1: nchannels
 
-        [spectra,freqs] = spectopo(EEG.data(n,:,:), 0, EEG.srate, 'plot', 'off'); % Sesuaikan channel mana yang mau diambil
+        [spectra,freqs] = spectopo(EEG.data(n,:,:), 0, EEG.srate, 'plot', 'off'); % Perform on all channels
 
         % delta=1-4, theta=4-8, alpha=8-13, beta=13-30, gamma=30-80
         deltaIdx{n} = find(freqs>1 & freqs<=4);
