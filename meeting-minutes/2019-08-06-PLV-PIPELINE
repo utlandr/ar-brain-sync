@@ -1,0 +1,28 @@
+PLV PIPELINE
+============
+
+### SCRIPT 1
+1. Cut pairs into 4 files (baseline,pre, training, post) 
+	-	Extracting epochs
+	-	Put Baseline into one folder (folder for each)
+
+
+### SCRIPT 2
+2. Preprocessing of pairs
+	-	FFT
+	-	ICA
+	- 	Noise Reduction
+	-	Separate into different freq bands <- need to find out
+
+3. Calculate PLV between pairs
+	-	With each frequency grab each channel for each pair
+	-	do for pre, training, post.
+
+4. Doing statistical analysis
+	-	Do with Chi Square.
+	-	Then look at calculating PLV for all coupling.
+
+Possible Things
+	-	Possible look into loreta (plugin required). 
+	-	How to video eeg data (eeglab)
+
