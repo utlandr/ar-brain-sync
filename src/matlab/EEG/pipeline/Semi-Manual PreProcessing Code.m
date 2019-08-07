@@ -12,6 +12,13 @@
 % you just one. The other will give two (.set and .fdt) 
 
 % eegh is a godsend. will show all the things you do in gui
+%%STEP -1 Breaking into epochs
+% We have to rename event numbers which are duplicated/renamed 4times
+% Use EEG.event(1).type = 'Test1' to do this
+% Can then use EEG = pop_epoch(EEG, {'Trigger1.1'}, [-1 0],'newname', 'Hyper1a_6', 'epochinfo', 'yes')
+% to extract data from that epoch (example takes [-1 0])
+% 
+
 
 %%UPDATE 29/04/19
 % Gamma di ganti freq 40
@@ -71,8 +78,8 @@ for SubjID = 1: length(SetFiles);
     EEG = pop_reref(EEG, []); % pop_reref does the averaging, where does it go?
     EEG = pop_select( EEG,'nochannel',{'initialReference'}); % back to the start
 
-    %STEP 9: Epoching data 1 to 3 sec <- may not need this (need to expand to 5 seconds for short experiment) 
-    EEG = eeg_regepochs(EEG, 'limits', [1 2] , 'extractepochs', 'on'); % creating epochs for FFT (NOT PLV)... What do the options do?
+    %STEP 9: Epoching data 1 to 2 sec <- may not need this (need to expand to 5 seconds for short experiment) 
+    EEG = eeg_regepochs(EEG, 'limits', [0 2] , 'extractepochs', 'on'); % creating epochs for FFT (NOT PLV)... What do the options do?
     
     %STEP 10: Automatic epoch rejection
     EEG = pop_autorej(EEG, 'threshold', 1000,'startprob',5,'maxrej', 5, 'nogui','on'); % Automaitcally finds the noise and removes the epochs that suck
