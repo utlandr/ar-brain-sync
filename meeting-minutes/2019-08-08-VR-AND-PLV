@@ -1,0 +1,16 @@
+VR and PLV
+==========
+
+Today we discussed splitting the workload to introduce a new task.
+I addition to automating the PLV pipeline (which Gus will primarily
+work on over the next week and a half), I will be working on 
+implementing the VR environment for the next two conditions
+(VR face-to-face and VR first person view). We discussed with 
+Ihshan and Amit on approximate deadlines to have to the tasks 
+complete. I will be borrowing an HTC Vive to work on the 
+environment at home with my VR ready machine (Ryzen 1600x +
+GTX 1080) 
+        
+I will be brushing up on my C# knowledge and working in Unity.
+
+
