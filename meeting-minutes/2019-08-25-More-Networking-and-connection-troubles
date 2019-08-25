@@ -19,3 +19,8 @@ I found an option in the NetworkManager Inspector element that
 ties the server to an IP address, once I was able to do that, the
 server accepted client connections fine. I will continue with 
 the tutorial and then get into the VR implementation. 
+
+Completed the networking tutorial and have made improvements
+in my model implementation. Also found a abetter IK 
+implementation that ties to a humanoid model. Just need 
+to fix the camera positioning. Arms work great. 
