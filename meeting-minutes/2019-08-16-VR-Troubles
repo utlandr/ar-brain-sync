@@ -1,0 +1,14 @@
+VR Troubles
+===========
+
+I have been spending a fair amount of time on VR and I am noticing this is going to take a while...
+
+Currently, I am trying to port a Hyperscanning VR environment that uses NoloVR (mobile VR). This
+was made by Prisanth at the ABI fairly recently. However, I am noticing that the HTC Vive is 
+very different in its implementation and approach. So it isn't going to be as simple as changing
+packages. Also, prisanth uses Photon Networking, a cloud based solution. I want to use Unity 
+Networking which enables local server setups. Regardless, the project has helped alot in my 
+understanding of VR in Unity, but I may have to build my implementation from scratch.
+
+Prisanths localMultiplayer project repo:
+https://github.com/prasanthsasikumar/localMultiplayer

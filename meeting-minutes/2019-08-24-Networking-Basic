@@ -1,0 +1,16 @@
+Networking Basics
+=================
+
+Networking is not easy. I am following a tutorial that implements
+Unity Networking for a simple scene (Non VR). Once I understand 
+Networking for any 3d setup, in theory it should also be easy to
+do VR (as this is more a less a glorified 3d environment). My
+only concern is how the player scripts for arm movement
+will interfer with the servers updates on position and rotation
+of part. My other concern is how to enable functionality with
+animations. 
+
+It appears the common approach is to only send transform information.
+Alternatively for the pointing animation. I can send the controller
+event to which the server respond with activating the animation.
+

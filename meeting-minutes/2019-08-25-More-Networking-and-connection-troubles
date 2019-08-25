@@ -1,0 +1,21 @@
+More Networking and connection troubles
+=======================================
+
+I have been having issues getting the two pcs to
+talk to each other wihtin the Unity application. 
+I have also brought a spare router I own to setup
+better data transfer between pcs (though in theory,
+I don't need DHCP and can set static IP's thus a 
+direct ethernet connection is all that is necessary).
+
+Finally got them to communicate and run the basic 
+netwoking application I have been learning from. 
+The issues I was having is by default, the Host 
+server wants to setup on localhost (127.0.0.1). So 
+the host client connects fine, but any other client wont
+be able to (localhost will never communicate with other pcs).
+
+I found an option in the NetworkManager Inspector element that
+ties the server to an IP address, once I was able to do that, the
+server accepted client connections fine. I will continue with 
+the tutorial and then get into the VR implementation. 

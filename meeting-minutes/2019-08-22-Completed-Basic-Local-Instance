@@ -1,0 +1,14 @@
+Completed Basic Local instance
+==============================
+
+So I think I have figured out a basic, local
+setup. The player is able to teleport and rotate
+on the spot (this will be used for the initial setup
+as well as VR familiarity). Furthermore, pulling the
+trigger on the controller initiates the pointing
+animation. I have also made use of a free Unity Store
+Asset called VRArmIK which implements a basic IK solver
+for the shoulder and upper arms so that in the VR
+scape, there is accurate elbow bending, shoulder rotation
+and wrist protonation.
+

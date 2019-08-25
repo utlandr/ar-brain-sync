@@ -1,0 +1,24 @@
+Into the VR scape
+=================
+
+I have completed a basic 7 hour tutorial on using
+Unity3D. Now I am going to start working on the VR scape.
+I have spent most of today getting the HTC Vive setup
+(base stations, controller calibration). THis also
+included a rather annoying 'bug' in SteamVR in which
+it uses a Web application hosted on localhost:8998.
+The only issues with this is that SteamVR doesn't 
+detect whether that port is being used by another 
+program. So I have to manually search and kill 
+any tasks running on 8998 before I can calibrate cotrollers
+or setup input mappings. So here is how to do it:
+
+ - Identify the culprit program using netstat:
+		netstat -ano | findstr :8998
+
+- Kill the task:
+		taskkill /PID <programid> /F
+
+- Restart SteamVR
+
+I have to do this everytime I setup SteamVR
