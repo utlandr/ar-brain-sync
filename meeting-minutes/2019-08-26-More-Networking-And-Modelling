@@ -1,0 +1,20 @@
+More Networking and Modelling
+=============================
+
+Today I will be working on getting the HMD camera
+to line up with the head of the model. This may
+take some messing around with the original code
+in which case I will make a fork of the original.
+
+Got the HMD to line up. I also tried some shoulder
+alteration techniques but to no avail. I just did 
+a translation for the shoulder bladed a bit so the
+arm doesnt go through the body too much. 
+
+Now I have hit yet another problem. With just about 
+everything working I am no longer able to get the 
+hands to animate into a point. 
+
+I intended to do networking today as the title
+suggests, but I failed in that regard. I'm having
+a hard time getting this to work.
