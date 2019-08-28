@@ -1,0 +1,23 @@
+Single Person VR Complete
+=========================
+
+Completed the single person VR environment. Using Unity's built in
+Mechanim IK solver, I have successfully set hand and feet targets.
+I am actually quite impressed with the result. The Humanoid model
+is also capable of sitting. I solved the hand animation problem by
+setting the animation to be additive instead of overiding so it 
+doesnt mess with the other IK animations. 
+
+The next major task is the networking. Having completed a tutorial
+on it I have a reasonable understanding of what to do. How this
+will appear in the code I have yet to figure out. Essentially, 
+a two person connection requires the managing of 6 character models. 
+2 for each local instance, and two for the remote instance. I have 
+already tried some basic implmenmentation but the tracking is applied
+over both character models (not just the one controlled by the player).
+Also, I don't know how I will setup the models. I guessing that the 
+ones on the server will have to act as 'puppets' to display to the
+clients. In other words, IK solver runs on each client to determine
+positions of the skeleton, then send that transform information to
+the server. Not too sure how animations will work though...
+
